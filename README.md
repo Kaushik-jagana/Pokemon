@@ -16,8 +16,8 @@ Follow these steps to get the project running locally.
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/your-repo.git
-   cd your-repo
+   git clone https://github.com/your-username/Pokemon.git
+   cd Pokemon
    
 2. **Install dependencies**
       ``` bash
