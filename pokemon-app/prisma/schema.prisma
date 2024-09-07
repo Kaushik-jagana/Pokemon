@@ -1,0 +1,30 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Pokemon {
+  id     Int      @id @default(autoincrement())
+  name   String
+  sprite String
+  types  PokemonType[]
+}
+
+model Type {
+  id     Int      @id @default(autoincrement())
+  name   String   @unique
+  pokemons PokemonType[]
+}
+
+model PokemonType {
+  pokemonId Int
+  typeId    Int
+  pokemon   Pokemon @relation(fields: [pokemonId], references: [id])
+  type      Type    @relation(fields: [typeId], references: [id])
+
+  @@id([pokemonId, typeId])
+}
