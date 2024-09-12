@@ -9,7 +9,7 @@ generator client {
 
 model Pokemon {
   id     Int      @id @default(autoincrement())
-  name   String
+  name   String  @unique
   sprite String
   types  PokemonType[]
 }
